@@ -5,7 +5,7 @@ description: >-
   anyone holding Goerli test ETH to join.
 ---
 
-# Guide: How to stake on ETH 2.0 ONYX testnet with Prysm
+# Guide: How to stake on ETH 2.0 ONYX testnet with Prysm on Ubuntu
 
 ## 🏁 0. Prerequisites
 
@@ -123,7 +123,7 @@ In a new terminal, start the validator.
 Congratulations. Once your beacon-chain is sync'd, validator up and running, you just wait for activation. This process takes 4-5 hours. When you're assigned, your validator will begin creating and voting on blocks while earning ETH staking rewards.
 {% endhint %}
 
-## 7. Reference Material
+## 🎞 7. Reference Material
 
 Check out the official documentation at:
 
