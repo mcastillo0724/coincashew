@@ -5,7 +5,11 @@ description: >-
   holding Goerli test ETH to join.
 ---
 
-# Guide: How to stake on eth2 Medalla Testnet with Prysm on Ubuntu
+# Guide: How to stake on ETH2 Medalla Testnet with Prysm on Ubuntu
+
+{% hint style="success" %}
+ [Prysm](https://github.com/prysmaticlabs/prysm) is a Go implementation of Ethereum 2.0 protocol with a focus on usability, security, and reliability. Prysm is developed by [Prysmatic Labs](https://prysmaticlabs.com/), a company with the sole focus on the development of their client. Prysm is written in Go and released under a GPL-3.0 license.
+{% endhint %}
 
 ## 🏁 0. Prerequisites
 
