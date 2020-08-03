@@ -8,7 +8,7 @@ description: >-
 # Guide: How to stake on ETH2 Medalla Testnet with Lighthouse on Ubuntu
 
 {% hint style="success" %}
- [Lighthouse](https://github.com/sigp/lighthouse) is an Eth2.0 client with a heavy focus on speed and security. The team behind it, [Sigma Prime](https://sigmaprime.io/), is an information security and software engineering firm who have funded Lighthouse along with the Ethereum Foundation, Consensys, and private individuals. Lighthouse is built in Rust and offered under an Apache 2.0 License.
+[Lighthouse](https://github.com/sigp/lighthouse) is an Eth2.0 client with a heavy focus on speed and security. The team behind it, [Sigma Prime](https://sigmaprime.io/), is an information security and software engineering firm who have funded Lighthouse along with the Ethereum Foundation, Consensys, and private individuals. Lighthouse is built in Rust and offered under an Apache 2.0 License.
 {% endhint %}
 
 ## 🏁 0. Prerequisites
@@ -232,7 +232,21 @@ lighthouse vc
 Congratulations. Once your beacon-chain is sync'd, validator up and running, you just wait for activation. This process takes up to 8 hours. When you're assigned, your validator will begin creating and voting on blocks while earning ETH staking rewards. Find your validator's status at [beaconcha.in](https://altona.beaconcha.in)
 {% endhint %}
 
-## 🧩 12. Reference Material
+## 🕒 12. Time Synchronization
+
+{% hint style="info" %}
+Because beacon chain relies on accurate times to perform attestations and produce blocks, your computer's time must be accurate to real NTP or NTS time within 0.5 seconds.
+{% endhint %}
+
+### 🛠 12.1 Setup Chrony
+
+Refer to the following guide.
+
+{% hint style="info" %}
+chrony is an implementation of the Network Time Protocol and helps to keep your computer's time synchronized with NTP.
+{% endhint %}
+
+## 🧩 13. Reference Material
 
 {% embed url="https://medalla.launchpad.ethereum.org/lighthouse" %}
 
