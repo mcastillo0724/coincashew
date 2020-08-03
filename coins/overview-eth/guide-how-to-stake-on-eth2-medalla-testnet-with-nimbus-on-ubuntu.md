@@ -7,6 +7,8 @@ description: >-
 
 # Guide: How to stake on ETH2 Medalla Testnet with Nimbus on Ubuntu
 
+
+
 {% hint style="danger" %}
 Work in progress.
 {% endhint %}
@@ -242,4 +244,6 @@ chrony is an implementation of the Network Time Protocol and helps to keep your 
 {% embed url="https://status-im.github.io/nim-beacon-chain/install.html" %}
 
 {% embed url="https://medalla.launchpad.ethereum.org/" %}
+
+ss
 
