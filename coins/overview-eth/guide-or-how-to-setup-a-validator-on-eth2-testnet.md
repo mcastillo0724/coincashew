@@ -7,14 +7,14 @@ description: >-
 # Guide \| How to setup a validator on ETH2 testnet
 
 {% hint style="success" %}
-As of Dec 5 2020, this guide is updated for **testnet Pyrmont.** 😁
+As of Dec 6 2020, this guide is updated for **testnet Pyrmont.** 😁
 {% endhint %}
 
-#### ✨ For the mainnet guide, [please click here](guide-or-how-to-setup-a-validator-on-eth2-mainnet.md).
+#### ✨ For the mainnet guide, [please click here](guide-or-how-to-setup-a-validator-on-eth2-mainnet/).
 
 ![](../../.gitbook/assets/gg.jpg)
 
-\*\*\*\*🎊 **2020-12 Update**: We're on [Gitcoin](https://gitcoin.co/grants/1653/eth2-staking-guides-by-coincashew), where you can contribute via [quadratic funding](https://vitalik.ca/general/2019/12/07/quadratic.html) and make a big impact.  Your **1 DAI** contribution equals a **23 DAI** match.
+\*\*\*\*🎊 **2020-12 Update**: We're on [Gitcoin](https://gitcoin.co/grants/1653/eth2-staking-guides-by-coincashew), where you can contribute via [quadratic funding](https://vitalik.ca/general/2019/12/07/quadratic.html) and make a big impact.  Your **1 DAI** contribution equals a **28 DAI** match.
 
 Please [check us out](https://gitcoin.co/grants/1653/eth2-staking-guides-by-coincashew). Thank you!🙏
 
@@ -2366,7 +2366,7 @@ For a video demo, watch [MohamedMansour's eth2 education videos](https://www.you
 {% hint style="success" %}
 🎉Congrats on setting up your validator! You're good to go on eth2.0.
 
-Did you find our guide useful? Let us know with a tip and we'll keep updating it.
+Did you find our guide useful? Send us a signal with a tip and we'll keep updating it.
 
 Use [cointr.ee to find our donation ](https://cointr.ee/coincashew)addresses. 🙏 
 
