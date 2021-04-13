@@ -9,7 +9,7 @@ description: >-
 {% hint style="success" %}
 As of April 12 2021, this guide is updated for **testnet PYRMONT.** 
 
-If you would like to test on **PRATER**, [please click here.](https://github.com/coincashew/coincashew/blob/53299338b94e2cb0896fd4fc0a1bbc9b5e985eef/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-testnet.md)
+If you would like to test on **PRATER**, [please click here.](guide-or-how-to-setup-a-validator-on-eth2-testnet-prater.md)
 {% endhint %}
 
 {% hint style="info" %}
@@ -183,7 +183,7 @@ cd eth2deposit-cli
 Make a new mnemonic.
 
 ```text
-./deposit new-mnemonic --chain prater
+./deposit new-mnemonic --chain pyrmont
 ```
 {% endtab %}
 
@@ -3590,7 +3590,7 @@ Add the following flag to increase peers on the `ExecStart` line.
 ```bash
 --max-peers=100
 # Example
-# /usr/bin/nimbus_beacon_node --network=prater --max-peers=100
+# /usr/bin/nimbus_beacon_node --network=pyrmont --max-peers=100
 ```
 {% endtab %}
 
