@@ -68,7 +68,7 @@ sudo usermod -aG sudo ethereum
 
 <summary>Creating a new SSH Key</summary>
 
-Create a new SSH key pair on **your client machine**. Run this on **your client machine,** not remote node.  Update the comment with your email or a comment.
+Create a new SSH key pair on **your client machine (i.e. local laptop)**. Run this on **your client machine,** not remote node.  Update the comment with your email or a comment.
 
 ```
 ssh-keygen -t ed25519 -C "name@email.com"
@@ -128,7 +128,7 @@ XioWFuqJIfdMG9lcGJg2AAAACWV0aDJAZXRoMgECAwQ=
 
 <details>
 
-<summary>Option 1: Transfer with ssh-copy-id</summary>
+<summary>Option 1: Transferring with ssh-copy-id</summary>
 
 Works with Linux or MacOS. Use option 2 for Windows.
 
@@ -349,7 +349,7 @@ sudo ufw allow 22/tcp
 
 ### Allow Execution Client Port 30303
 
-Peering on port 30303, Execution clients use this port for communication with other network peers.
+Peering on port 30303, execution clients use this port for communication with other network peers.
 
 ```bash
 sudo ufw allow 30303
@@ -391,20 +391,20 @@ Example of properly configured ufw status for Lighthouse.
 > ```
 
 {% hint style="info" %}
-**Port Forwarding Tip:** You'll need to forward and open ports to your validator.&#x20;
+**Port Forwarding Tip:** You'll need to forward and open ports to your validator.
 
 
 
 Verify port forwarding is working with
 
-* [https://www.yougetsignal.com/tools/open-ports/](https://www.yougetsignal.com/tools/open-ports/)&#x20;
+* [https://www.yougetsignal.com/tools/open-ports/](https://www.yougetsignal.com/tools/open-ports/)
 * or [https://canyouseeme.org](https://canyouseeme.org)
 
 As an example, for Lighthouse, you would verify ports 9000 and 30303 are reachable.
 
 
 
-For advice on configuring port forwarding with routers, refer to this [general port forwarding guide.](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/)
+:bulb: For advice on configuring port forwarding with routers, refer to this [general port forwarding guide.](https://www.noip.com/support/knowledgebase/general-port-forwarding-guide/)
 {% endhint %}
 
 ### Optional: Whitelisting Connections

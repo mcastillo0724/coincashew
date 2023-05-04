@@ -302,16 +302,6 @@ sudo systemctl enable eth1
 
 
 
-{% hint style="info" %}
-On Ubuntu 22.xx+, a [workaround](https://github.com/NethermindEth/nethermind/issues/4039) is required.
-
-```
-sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64-linux-gnu/libdl.so
-```
-{% endhint %}
-
-
-
 :chains: **Start Nethermind**
 
 ```

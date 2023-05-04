@@ -1,4 +1,4 @@
-# Signing up to be a validator at the Launchpad
+# Step 3: Setting up Validator Keys
 
 1. Install dependencies, the Ethereum Foundation deposit tool and generate your two sets of key pairs.
 
@@ -8,6 +8,19 @@ Each validator will have two sets of key pairs. A **signing key** and a **withdr
 
 
 You will also set your [ETH Withdrawal Address](https://notes.ethereum.org/@launchpad/withdrawals-faq#Q-What-are-the-two-types-of-withdrawals), preferably from your Ledger or Trezor hardware wallet.
+
+
+
+:octagonal\_sign::octagonal\_sign: **DO NOT USE AN EXCHANGE ADDRESS AS WITHDRAWAL ADDRESS.** :octagonal\_sign::octagonal\_sign:&#x20;
+
+:octagonal\_sign::octagonal\_sign: **Double check your work as this is permanent once set!** :octagonal\_sign::octagonal\_sign:
+
+
+
+The Withdrawal Address is:
+
+* where your ETH is returned upon "voluntary exiting a validator", or also known as full withdrawal.&#x20;
+* where you receive partial withdrawals, which is where any excess balance above 32 ETH is periodically scraped and made available for use.
 {% endhint %}
 
 You have the choice of using the [Wagyu GUI](https://github.com/stake-house/wagyu-installer), downloading the pre-built [Ethereum staking deposit tool](https://github.com/ethereum/staking-deposit-cli) or building it from source.
@@ -237,7 +250,7 @@ Make a new mnemonic and replace `<ETH_ADDRESS_FROM_IDEALLY_HARDWARE_WALLET>` wit
 
 
 {% hint style="info" %}
-The Withdrawal Address is where your ETH is returned upon "voluntary exiting a validator", or also known as full withdrawal. This address also receives partial withdrawls, which is where any excess balance above 32 ETH is periodically scraped and made available for use.
+The Withdrawal Address is where your ETH is returned upon "voluntary exiting a validator", or also known as full withdrawal. This address also receives partial withdrawals, which is where any excess balance above 32 ETH is periodically scraped and made available for use.
 {% endhint %}
 
 
