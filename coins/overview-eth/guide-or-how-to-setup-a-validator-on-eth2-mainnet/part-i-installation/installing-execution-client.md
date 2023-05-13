@@ -1,36 +1,13 @@
-# Installing execution client
+# Step 4: Installing execution client
 
-{% hint style="info" %}
-Ethereum requires a connection to execution client in order to monitor for 32 ETH validator deposits. Hosting your own execution client is the best way to maximize decentralization.
-{% endhint %}
-
-{% hint style="warning" %}
-The subsequent steps assume you have completed the [best practices security guide.](guide-or-security-best-practices-for-a-eth2-validator-beaconchain-node.md)
-
-:octagonal\_sign: Do not run your processes as **ROOT** user. :scream:
-{% endhint %}
-
-### Create a jwtsecret file
-
-A jwtsecret file contains a hexadecimal string that is passed to both Execution Layer client and Consensus Layer clients, and is used to ensure authenticated communications between both clients.
-
-```bash
-#store the jwtsecret file at /secrets
-sudo mkdir -p /secrets
-
-#create the jwtsecret file
-openssl rand -hex 32 | tr -d "\n" | sudo tee /secrets/jwtsecret
-
-#enable read access
-sudo chmod 644 /secrets/jwtsecret
-```
-
-### Pick an execution client
+## Pick an execution client
 
 Your choice of either [**Geth**](https://geth.ethereum.org)**,** [**Besu**](https://besu.hyperledger.org)**,** [**Nethermind**](https://www.nethermind.io)**, or** [**Erigon**](https://github.com/ledgerwatch/erigon)**.**
 
 {% hint style="info" %}
-To strengthen Ethereum's resilience against potential attacks or consensus bugs, it's best practice to run a minority client in order to increase client diversity. Find the latest distribution of execution clients here: [https://clientdiversity.org/](https://clientdiversity.org/)
+To strengthen Ethereum's resilience against potential attacks or consensus bugs, it's best practice to run a minority client in order to increase client diversity. Find the latest distribution of execution clients here: [https://clientdiversity.org](https://clientdiversity.org/)
+
+:shield: **Recommendation** :shield:: Nethermind
 {% endhint %}
 
 {% tabs %}
@@ -71,13 +48,14 @@ cat > $HOME/eth1.service << EOF
 Description=Geth Execution Layer Client service
 Wants=network-online.target
 After=network-online.target
+Documentation=https://www.coincashew.com
 
 [Service]
 Type=simple
 User=$USER
 Restart=on-failure
 RestartSec=3
-TimeoutSec=300
+TimeoutSec=690
 ExecStart=/usr/bin/geth \
   --mainnet \
   --metrics \
@@ -172,6 +150,7 @@ cat > $HOME/eth1.service << EOF
 Description=Besu Execution Layer Client service
 Wants=network-online.target
 After=network-online.target
+Documentation=https://www.coincashew.com
 
 [Service]
 Type=simple
@@ -179,7 +158,7 @@ User=$USER
 Restart=on-failure
 RestartSec=3
 KillSignal=SIGINT
-TimeoutStopSec=300
+TimeoutStopSec=690
 Environment="JAVA_OPTS=-Xmx5g"
 ExecStart=$HOME/besu/bin/besu \
   --network=mainnet \
@@ -249,7 +228,7 @@ sudo apt-get install curl libsnappy-dev libc6-dev jq libc6 unzip -y
 
 :last\_quarter\_moon\_with\_face:**Download and unzip Nethermind**
 
-****
+
 
 Review the latest release at [https://github.com/NethermindEth/nethermind/releases](https://github.com/NethermindEth/nethermind/releases)
 
@@ -266,7 +245,7 @@ rm nethermind*linux*.zip
 
 :gear: **Setup and configure systemd**
 
-****
+
 
 Run the following to create a **unit file** to define your `eth1.service` configuration.
 
@@ -278,6 +257,7 @@ cat > $HOME/eth1.service << EOF
 Description=Nethermind Execution Layer Client service
 Wants=network-online.target
 After=network-online.target
+Documentation=https://www.coincashew.com
 
 [Service]
 Type=simple
@@ -285,7 +265,7 @@ User=$USER
 Restart=on-failure
 RestartSec=3
 KillSignal=SIGINT
-TimeoutStopSec=300
+TimeoutStopSec=690
 WorkingDirectory=$HOME/nethermind
 ExecStart=$HOME/nethermind/Nethermind.Runner \
   --baseDbPath $HOME/.nethermind \
@@ -293,6 +273,8 @@ ExecStart=$HOME/nethermind/Nethermind.Runner \
   --Metrics.ExposePort 6060 \
   --Metrics.IntervalSeconds 10000 \
   --Sync.SnapSync true \
+  --Sync.AncientBodiesBarrier 11052984 \
+  --Sync.AncientReceiptsBarrier 11052984 \
   --JsonRpc.JwtSecretFile /secrets/jwtsecret
 
 [Install]
@@ -320,16 +302,6 @@ Run the following to enable auto-start at boot time.
 sudo systemctl daemon-reload
 sudo systemctl enable eth1
 ```
-
-
-
-{% hint style="info" %}
-On Ubuntu 22.xx+, a [workaround](https://github.com/NethermindEth/nethermind/issues/4039) is required.
-
-```
-sudo ln -s /usr/lib/x86_64-linux-gnu/libdl.so.2 /usr/lib/x86_64-linux-gnu/libdl.so
-```
-{% endhint %}
 
 
 
@@ -428,6 +400,7 @@ cat > $HOME/eth1.service << EOF
 Description=Erigon Execution Layer Client service
 Wants=network-online.target
 After=network-online.target
+Documentation=https://www.coincashew.com
 
 [Service]
 Type=simple
@@ -435,13 +408,14 @@ User=$USER
 Restart=on-failure
 RestartSec=3
 KillSignal=SIGINT
-TimeoutStopSec=300
+TimeoutStopSec=690
 ExecStart=$HOME/erigon/build/bin/erigon \
  --datadir /var/lib/erigon \
  --chain mainnet \
  --metrics \
  --pprof \
  --prune htc \
+ --prune.r.before=11052984 \
  --authrpc.jwtsecret=/secrets/jwtsecret
 
 [Install]
