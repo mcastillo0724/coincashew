@@ -33,6 +33,7 @@ sudo chown -R execution:execution /var/lib/reth
 Install dependencies.
 
 ```bash
+sudo apt-get update
 sudo apt install -y ccze jq curl
 ```
 
@@ -164,7 +165,7 @@ ExecStart=/usr/local/bin/reth node \
     --http \
     --http.port 8545 \
     --http.api="rpc,eth,web3,net,debug" \
-    --log.directory=/var/lib/reth/logs \
+    --log.file.directory=/var/lib/reth/logs \
     --authrpc.jwtsecret=/secrets/jwtsecret
    
 <strong>[Install]
