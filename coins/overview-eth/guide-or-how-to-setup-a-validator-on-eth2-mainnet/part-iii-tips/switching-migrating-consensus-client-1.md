@@ -9,11 +9,11 @@ Important reasons why you would want to switch Execution Clients:
 {% endhint %}
 
 {% hint style="info" %}
-:fire:**Optional Tip**: Before switching, it is possible to minimize downtime and keep your validator online by using a failover node, either your own EL/CL stack, or a public service.&#x20;
+:fire:**Optional Tip**: Before switching, it is possible to minimize downtime and keep your validator online by using a failover node, either your own EL/CL stack, or a public service.
 
 Here are some public options:
 
-* [Tennisbowling's Open Execution](https://openexecution.tennisbowling.com/)
+* [Tennisbowling's Open Execution Node](https://openexecution.tennisbowling.com/)
 * [RocketPool's Rescue Node](https://rescuenode.com/docs/how-to-connect/solo)
 
 However, as validator downtime incurs minimal penalties, the added complexity might not be worth your time and extra work configuring a failover option.
@@ -69,7 +69,7 @@ sudo userdel execution
 
 <summary>Step 2: Install NEW Execution Client</summary>
 
-Follow the instructions found under section: [Installing a new Execution Client.](https://app.gitbook.com/o/Ipl5aiJxYYShJZr41G7s/s/-M5KYnWuA6dS\_nKYsmfV-887967055/\~/changes/1124/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/step-3-installing-execution-client)
+Follow the instructions found under section: [Installing a new Execution Client.](../part-i-installation/step-3-installing-execution-client/)
 
 ***
 
@@ -93,13 +93,13 @@ sudo systemctl restart consensus
 
 <summary>Step 4: Update Monitoring tools</summary>
 
-**Promentheus and Grafana**:&#x20;
+**Promentheus and Grafana**:
 
 * Revisit the [monitoring guide](https://app.gitbook.com/o/Ipl5aiJxYYShJZr41G7s/s/-M5KYnWuA6dS\_nKYsmfV-887967055/\~/changes/1124/coins/overview-eth/guide-or-how-to-setup-a-validator-on-eth2-mainnet/part-i-installation/monitoring-your-validator-with-grafana-and-prometheus) and update your `prometheus.yml`configuration for the new execution client.
-* Ensure prometheus is connected to your new execution client's metrics port 6060.&#x20;
+* Ensure prometheus is connected to your new execution client's metrics port 6060.
 * Also import your new execution client's dashboard.
 
-Beaconcha.in Mobile App:
+**Beaconcha.in Mobile App:**
 
 * To receive new notifications, update your app's settings to indicate you're using a different execution client
 
